@@ -1,0 +1,12 @@
+.pnpm-store/
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+.env
+.env.local
+coverage/
+*.tsbuildinfo
+credentials.json
+token.json

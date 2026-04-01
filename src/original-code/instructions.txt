@@ -1,0 +1,121 @@
+I did a backup of Google takeout for my youtube data of my work account
+Is there anyway to "merge" it into my personal account?
+
+8:07 PM
+Unfortunately, there's no official way to merge YouTube accounts or transfer data between Google accounts. YouTube doesn't provide any built-in migration tool for this.
+
+Here's what you can and can't transfer from a Google Takeout backup:
+
+What you can manually migrate:
+
+Subscriptions — Your takeout includes a subscriptions.csv file. You can use third-party tools like YouTube Subscriptions Transfer (a browser extension) to bulk-subscribe on your personal account.
+Playlists — These are exported as .csv files. You can manually recreate them, or use tools/scripts to re-add videos via the YouTube Data API.
+Watch history / Search history — These are exported as HTML/JSON files but cannot be imported into another account. You'd have to manually re-watch or there's no import path.
+What cannot be transferred:
+
+Channel (subscribers, videos, comments, analytics) — A YouTube channel is permanently tied to a Google account. There's no migration path.
+Watch Later — Not included in Takeout in a useful import format.
+YouTube Premium benefits — Non-transferable.
+Best workaround for subscriptions (most practical):
+
+Open your Takeout export and find subscriptions.csv
+Install the Trim - IFTTT for YouTube extension or similar
+Use it to import the subscription list to your personal account
+Would you like help with a specific part of this — like a script to re-add subscriptions or playlists using the YouTube API?
+
+yes
+
+8:08 PM
+Let me ask a couple of quick questions to point you in the right direction!
+
+The questions have been sent — go ahead and answer them and I'll tailor the solution for you!
+
+Do you have something in typescript which i can do?
+
+8:09 PM
+Let me check what files are in your Takeout export first — can you share what's in your Google Takeout backup? Specifically, I'd love to know which files/folders you have (e.g. subscriptions.csv, playlists/, etc.).
+
+In the meantime, let me read the relevant skill and start building a TypeScript solution for you.
+
+
+Check skills available
+Check skills available
+Here's a TypeScript script that handles migrating subscriptions, playlists, and liked videos from a Google Takeout export to your personal account using the YouTube Data API v3.
+
+
+Created a file, read a file
+Created a file, read a file
+Here's your migration script! Here's how to get it running:
+
+1. Install dependencies
+
+bash
+npm init -y
+npm install googleapis csv-parse
+npm install -D typescript ts-node @types/node
+```
+
+**2. Set up Google Cloud credentials**
+- Go to [console.cloud.google.com](https://console.cloud.google.com)
+- Create a project → Enable **YouTube Data API v3**
+- Go to **Credentials** → Create **OAuth 2.0 Client ID** (Desktop App type)
+- Download the JSON and save it as `credentials.json` next to the script
+
+**3. Set your Takeout path**
+Edit the `CONFIG.takeoutPath` in the script to point to your Takeout folder. The expected structure is:
+```
+Takeout/YouTube and YouTube Music/
+  subscriptions/subscriptions.csv
+  playlists/my-playlist.csv
+  playlists/liked-videos.csv
+4. Run it (logged into your personal Google account)
+
+bash
+npx ts-node youtube-migrate.ts
+It will open a URL — authorize it with your personal account, paste the code back, and it'll start migrating.
+
+A few things to know:
+
+The YouTube Data API has a daily quota of 10,000 units. If you have hundreds of subscriptions/videos, it may take 2–3 days to fully migrate across multiple runs (the script skips already-migrated items).
+Liked videos are re-liked on your personal account (not added to a playlist).
+Playlists are created as private by default — you can change them afterward.
+Youtube migrate
+TS 
+
+
+Let me check what files are in your Takeout export first — can you share what's in your Google Takeout backup? Specifically, I'd love to know which files/folders you have (e.g. `subscriptions.csv`, `playlists/`, etc.).
+
+In the meantime, let me read the relevant skill and start building a TypeScript solution for you.Here's a TypeScript script that handles migrating **subscriptions, playlists, and liked videos** from a Google Takeout export to your personal account using the YouTube Data API v3.Here's your migration script! Here's how to get it running:
+
+**1. Install dependencies**
+```bash
+npm init -y
+npm install googleapis csv-parse
+npm install -D typescript ts-node @types/node
+```
+
+**2. Set up Google Cloud credentials**
+- Go to [console.cloud.google.com](https://console.cloud.google.com)
+- Create a project → Enable **YouTube Data API v3**
+- Go to **Credentials** → Create **OAuth 2.0 Client ID** (Desktop App type)
+- Download the JSON and save it as `credentials.json` next to the script
+
+**3. Set your Takeout path**
+Edit the `CONFIG.takeoutPath` in the script to point to your Takeout folder. The expected structure is:
+```
+Takeout/YouTube and YouTube Music/
+  subscriptions/subscriptions.csv
+  playlists/my-playlist.csv
+  playlists/liked-videos.csv
+```
+
+**4. Run it (logged into your personal Google account)**
+```bash
+npx ts-node youtube-migrate.ts
+```
+It will open a URL — authorize it with your **personal** account, paste the code back, and it'll start migrating.
+
+**A few things to know:**
+- The YouTube Data API has a daily quota of **10,000 units**. If you have hundreds of subscriptions/videos, it may take 2–3 days to fully migrate across multiple runs (the script skips already-migrated items).
+- Liked videos are re-liked on your personal account (not added to a playlist).
+- Playlists are created as **private** by default — you can change them afterward.

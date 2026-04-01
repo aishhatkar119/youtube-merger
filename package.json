@@ -1,0 +1,61 @@
+{
+  "name": "youtube-merger",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "A TypeScript CLI tool that migrates YouTube subscriptions, playlists, and liked videos from Google Takeout CSV exports to another account using the YouTube Data API v3, with OAuth2, rate-limit-aware retries, and configurable sections",
+  "keywords": [
+    "youtube",
+    "takeout",
+    "migration",
+    "csv",
+    "google-apis",
+    "youtube-data-api",
+    "cli",
+    "typescript",
+    "oauth2",
+    "playlists",
+    "subscriptions"
+  ],
+  "author": "Or Assayag",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orassayag/youtube-merger"
+  },
+  "bugs": {
+    "url": "https://github.com/orassayag/youtube-merger/issues"
+  },
+  "homepage": "https://github.com/orassayag/youtube-merger#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "migrate": "tsx src/main.ts",
+    "build": "tsc",
+    "test": "cross-env NODE_OPTIONS=--no-warnings vitest run",
+    "test:watch": "cross-env NODE_OPTIONS=--no-warnings vitest",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "prettier": "prettier --check \"src/**/*.ts\"",
+    "prettier:fix": "prettier --write \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6",
+    "google-auth-library": "^9.14.2",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.37.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.2",
+    "vitest": "^2.1.9"
+  }
+}
